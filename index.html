@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>Choose Your Pokémon</h1>
+            <p>Select a Pokémon from the list to see its sprite and where it appears on the region map.</p>
+        </header>
+
+        <div class="controls">
+            <select id="pokemon-select">
+                <option value="">Select a Pokémon</option>
+            </select>
+        </div>
+
+        <div class="content-grid">
+            <section id="pokemon-display" class="card">
+                <div class="placeholder">
+                    <span>Select a Pokémon to load its image and location.</span>
+                </div>
+            </section>
+
+            <section class="card map-card">
+                <h2>Region Map</h2>
+                <div id="region-map">
+                    <div id="map-marker" hidden></div>
+                </div>
+                <p id="map-note">Pick a Pokémon to place the marker where it can be found.</p>
+            </section>
+        </div>
+
+        <section class="card premium-card">
+            <div class="premium-header">
+                <h2>Premium Fight Creator</h2>
+                <p>Create a short battle video of two Pokémon fighting each other.</p>
+            </div>
+
+            <div class="premium-controls">
+                <label>
+                    Fighter 1
+                    <select id="premium-left-select">
+                        <option value="">Choose fighter 1</option>
+                    </select>
+                </label>
+                <label>
+                    Fighter 2
+                    <select id="premium-right-select">
+                        <option value="">Choose fighter 2</option>
+                    </select>
+                </label>
+            </div>
+
+            <button id="create-fight-video" class="primary-button">Create Fight Video</button>
+            <p id="premium-status" class="premium-status">Premium ready. Choose two fighters to generate the battle.</p>
+
+            <div class="video-preview">
+                <canvas id="fight-canvas" width="640" height="320"></canvas>
+                <video id="fight-video" controls loop hidden></video>
+                <a id="download-video" class="button-link" hidden download="pokemon-fight.webm">Download fight video</a>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
